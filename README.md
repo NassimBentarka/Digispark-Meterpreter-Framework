@@ -5,13 +5,13 @@ A framework which writes your Digispark arduino code for a specific metasploit p
 1. Generate a shellcode based on the chosen payload.
 2. Generate a powershell script containing the payload.
 3. Generate a ready Digispark arduino code.
-4. Option to self-host the powershell script on the go using a ruby server
+4. Option to self-host the powershell script on the go using a ruby server.
 ### Prerequisites
 - Kali Linux distribution or any distro running these tools:
   MsfVenom
   and
   Metasploit.
-  (Note that Kali Linux includes everything required for this framework to run)
+  (Note that Kali Linux includes everything required for this framework to run).
 - Ruby
 ### How to use
 Run:
