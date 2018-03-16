@@ -19,10 +19,10 @@ Run:
 sudo ruby main.rb
 ```
 ## Contributing
-Please read [CONTRIBUTING.md](https://github.com/nassimosaz/Digispark-Meterpreter-Framework/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 ## Authors
 * **James Cook** - *Initial work* - [jamesbcook](https://github.com/jamesbcook)
 * **Nassim Bentarka** - *Developer and adapter* - [nassimosaz](https://github.com/nassimosaz)
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
