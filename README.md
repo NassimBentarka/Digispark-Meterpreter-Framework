@@ -6,7 +6,7 @@ A framework which writes your Digispark arduino code for a specific metasploit p
 2. Generate a powershell script containing the payload.
 3. Generate a ready Digispark arduino code (Currently support Azerty/Qwerty Windows targets, more operating systems will be supported in the future).
 4. Option to self-host the powershell script on the go using a ruby server.
-### Prerequisites
+### Prerequisites and Dependencies
 - Kali Linux distribution or any distro running these tools:
   MsfVenom
   and
@@ -14,7 +14,7 @@ A framework which writes your Digispark arduino code for a specific metasploit p
   (Note that Kali Linux includes everything required for this framework to run).
 - Ruby
 ### How to use
-Run:
+Run: (on KALI Linux)
 ```
 git clone https://github.com/nassimosaz/Digispark-Meterpreter-Framework.git && cd Digispark-Meterpreter-Framework/
 sudo ruby main.rb
