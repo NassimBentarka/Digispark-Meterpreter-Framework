@@ -14,7 +14,7 @@ A framework which writes your Digispark arduino code for a specific metasploit p
   (Note that Kali Linux includes everything required for this framework to run).
 - Ruby
 ### How to use
-Run: (on KALI Linux)
+Run: (Tested on KALI Linux)
 ```
 git clone https://github.com/nassimosaz/Digispark-Meterpreter-Framework.git && cd Digispark-Meterpreter-Framework/
 sudo ruby main.rb
