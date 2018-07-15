@@ -1,5 +1,6 @@
 # Digispark-Meterpreter-Framework
-A framework which writes your Digispark arduino code for a specific metasploit payload
+A ruby framework which writes the Digispark arduino code for you by specifying a metasploit payload, beneficial for time saving.
+Efficient when implemented to Kali Linux (for fast shells lovers).
 ## Getting Started
 ### Features
 1. Generate a shellcode based on the chosen payload.
