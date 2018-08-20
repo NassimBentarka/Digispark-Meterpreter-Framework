@@ -4,7 +4,8 @@ require 'socket'
 include MainCommands
 class Server
   def set_host
-    host_name = get_input('Enter the msf lhost ip to listen on: ')
+    localhost = Socket.ip_address_list[1].ip_address
+    host_name = get_input("Enter the msf lhost ip to listen on [#{localhost}] (you can use your public ip/domain otherwise): ", localhost)
     #ip = host_name.split('.')
     #until !(ip[0].nil? || ip[1].nil? || ip[2].nil? || ip[3].nil?)
     #  host_name = get_input('Enter the host ip to listen on: ')
@@ -33,10 +34,10 @@ class Server
 	def set_host_web(host_name)
 	localhost = Socket.ip_address_list[1].ip_address
     #host_name_web = get_input("Enter the host ip to listen on [#{host_name}]: ", host_name)
-	host_name_web = get_input("Enter the host ip to listen on [#{localhost}]: ", localhost)
+	host_name_web = get_input("Enter the host ip to listen on for the webserver (your local ip address) [#{localhost}]: ", localhost)
     ip = host_name_web.split('.')
     until !(ip[0].nil? || ip[1].nil? || ip[2].nil? || ip[3].nil?)
-      host_name_web = get_input('Enter the host ip to listen on: ')
+      host_name_web = get_input('Enter the host ip to listen on for the webserver (use a valid local ip address): ')
       ip = host_name_web.split('.')
     end
     print_success("Using #{host_name_web} as webserver\n")

