@@ -14,7 +14,7 @@ A ruby framework which writes the Digispark arduino code for you by specifying a
   (Note that Kali Linux includes everything required for this framework to run).
 - Ruby
 ### How to use
-Run: (Tested on KALI Linux)
+Run (root): (Tested on KALI Linux)
 ```
 git clone https://github.com/nassimosaz/Digispark-Meterpreter-Framework.git && cd Digispark-Meterpreter-Framework/
 sudo make install
