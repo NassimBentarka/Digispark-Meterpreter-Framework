@@ -16,7 +16,6 @@ A ruby framework which writes the Digispark arduino code for you by specifying a
 ### How to use
 Run (root): (Tested on KALI Linux)
 ```
-git clone https://github.com/nassimosaz/Digispark-Meterpreter-Framework.git && cd Digispark-Meterpreter-Framework/
 sudo git clone https://github.com/nassimosaz/Digispark-Meterpreter-Framework.git && cd Digispark-Meterpreter-Framework && chmod +x main.rb
 sudo digispark-msf
 ```
