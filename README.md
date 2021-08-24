@@ -22,7 +22,7 @@ sudo ruby main.rb
 ## Contributing
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 ## Authors
-* **Nassim Bentarka** - *Developer* - [nassimosaz](https://github.com/nassimosaz)
+* **Nassim Bentarka** - *Developer* - [NassimBentarka](https://github.com/NassimBentarka)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
